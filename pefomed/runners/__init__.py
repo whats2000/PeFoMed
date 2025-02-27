@@ -7,5 +7,4 @@
 
 from pefomed.runners.runner_base import RunnerBase
 from pefomed.runners.runner_iter import RunnerIter
-from pefomed.runners.runner_mamba import RunnerMamba
-__all__ = ["RunnerBase", "RunnerIter", "RunnerMamba"]
+__all__ = ["RunnerBase", "RunnerIter"]

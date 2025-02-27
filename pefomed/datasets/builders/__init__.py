@@ -16,25 +16,6 @@ from pefomed.datasets.builders.image_text_pair_builder import (
     VGCaptionInstructBuilder,
     SBUCaptionBuilder,
     SBUCaptionInstructBuilder,
-    Laion400MBuilder,
-    Laion400MInstructBuilder
-)
-from pefomed.datasets.builders.classification_builder import (
-    NLVRBuilder,
-    SNLIVisualEntailmentBuilder,
-    SNLIVisualEntailmentInstructBuilder,
-    ViolinEntailmentInstructBuilder,
-    ViolinEntailmentBuilder,
-    ESC50ClassificationBuilder
-)
-from pefomed.datasets.builders.imagefolder_builder import ImageNetBuilder
-from pefomed.datasets.builders.video_qa_builder import (
-    MSRVTTQABuilder, 
-    MSVDQABuilder,
-    MSRVTTQAInstructBuilder,
-    MSVDQAInstructBuilder,
-    MusicAVQABuilder,
-    MusicAVQAInstructBuilder
 )
 
 from pefomed.datasets.builders.medical_builder import (
@@ -43,166 +24,19 @@ from pefomed.datasets.builders.medical_builder import (
     CLEFBuilder
 )
 
-from pefomed.datasets.builders.vqa_builder import (
-    COCOVQABuilder,
-    COCOVQAInstructBuilder,
-    OKVQABuilder,
-    OKVQAInstructBuilder,
-    AOKVQABuilder,
-    AOKVQAInstructBuilder,
-    VGVQABuilder,
-    VGVQAInstructBuilder,
-    GQABuilder,
-    GQAInstructBuilder,
-    IconQABuilder,
-    IconQAInstructBuilder,
-    ScienceQABuilder,
-    ScienceQAInstructBuilder,
-    OCRVQABuilder,
-    OCRVQAInstructBuilder,
-    VizWizVQABuilder
-)
-from pefomed.datasets.builders.retrieval_builder import (
-    MSRVTTRetrievalBuilder,
-    DiDeMoRetrievalBuilder,
-    COCORetrievalBuilder,
-    Flickr30kBuilder,
-)
-
-from pefomed.datasets.builders.audio_caption_builder import (
-    AudioSetBuilder,
-    AudioCapsCapBuilder,
-    AudioSetInstructBuilder,
-    AudioCapsInstructCapBuilder,
-    WavCapsCapInstructBuilder,
-    WavCapsCapBuilder
-)
-
-from pefomed.datasets.builders.object3d_caption_builder import (
-    ObjaverseCaptionInstructBuilder,
-    ShapenetCaptionInstructBuilder,
-    ObjaverseCaptionBuilder,
-    ShapenetCaptionBuilder
-)
-from pefomed.datasets.builders.object3d_qa_builder import ObjaverseQABuilder
-from pefomed.datasets.builders.object3d_classification_builder import ModelNetClassificationBuilder
-
-from pefomed.datasets.builders.audio_qa_builder import AudioCapsQABuilder, ClothoQABuilder
-
-from pefomed.datasets.builders.dialogue_builder import (
-    AVSDDialBuilder, 
-    AVSDDialInstructBuilder,
-    YT8MDialBuilder,
-    LLaVA150kDialInstructBuilder,
-    VisDialBuilder,
-    VisDialInstructBuilder
-)
-from pefomed.datasets.builders.text_to_image_generation_builder import BlipDiffusionFinetuneBuilder
-
-from pefomed.datasets.builders.discrn_builders import DiscrnImagePcBuilder, DiscrnAudioVideoBuilder
-
 from pefomed.common.registry import registry
 
 __all__ = [
-    "BlipDiffusionFinetuneBuilder",
-    "COCOCapBuilder",
-    "COCORetrievalBuilder",
-    "COCOVQABuilder",
     "ConceptualCaption12MBuilder",
     "ConceptualCaption3MBuilder",
-    "DiDeMoRetrievalBuilder",
-    "Flickr30kBuilder",
-    "GQABuilder",
-    "ImageNetBuilder",
-    "MSRVTTCapBuilder",
-    "MSRVTTQABuilder",
-    "MSRVTTRetrievalBuilder",
-    "MSVDCapBuilder",
-    "MSVDQABuilder",
-    "NLVRBuilder",
-    "OKVQABuilder",
-    "AOKVQABuilder",
     "SBUCaptionBuilder",
-    "SNLIVisualEntailmentBuilder",
-    "VATEXCapBuilder",
     "VGCaptionBuilder",
-    "VGVQABuilder",
-    "AVSDDialBuilder",
-    "Laion400MBuilder",
-
-    "ViolinCapBuilder",
-    "ViolinEntailmentBuilder",
-    "VlepCaptionBuilder",
-    "YouCookCaptionBuilder",
-    "COINCaptionBuilder",
-    "CharadeCaptionBuilder",
-    "YT8MDialBuilder",
-    "IconQABuilder",
-    "ScienceQABuilder",
-    "VisDialBuilder",
-    "OCRVQABuilder",
-    "VizWizVQABuilder",
-    "TextCapsCapBuilder",
-    "Flickr30kCapBuilder",
-    "AudioSetBuilder",
-    "AudioCapsCapBuilder",
-    "WavCapsCapBuilder",
-    "WebVid2MCapBuilder",
-    "VALORCaptionBuilder",
-    "ObjaverseCaptionBuilder",
-    "ShapenetCaptionBuilder",
-    "ObjaverseQABuilder",
-    "MusicAVQABuilder",
-    "ESC50ClassificationBuilder",
 
     ## Instruction Builders
-    "AOKVQAInstructBuilder",
-    "OKVQAInstructBuilder",
-    "AudioSetInstructBuilder",
-    "AudioCapsInstructCapBuilder",
-    "AudioCapsQABuilder",
-    "WavCapsCapInstructBuilder",
-    "ObjaverseCaptionInstructBuilder",
-    "ShapenetCaptionInstructBuilder",
-    "ModelNetClassificationBuilder",
-    "ObjaverseCaptionInstructBuilder",
-    "MSRVTTCapInstructBuilder",
-    "MSVDCapInstructBuilder",
-    "VATEXCapInstructBuilder",
-    "WebVid2MCapInstructBuilder",
-    "MSRVTTQAInstructBuilder",
-    "MSVDQAInstructBuilder",
-    "VALORCaptionInstructBuilder",
-    "AVSDDialInstructBuilder",
-    "VisDialInstructBuilder",
-    "MusicAVQAInstructBuilder",
-    "ViolinCapInstructBuilder",
-    "ViolinEntailmentInstructBuilder",
-    "VlepCaptionInstructBuilder", 
-    "YouCookCaptionInstructBuilder",
-    "COINCaptionInstructBuilder",
-    "CharadeCaptionInstructBuilder",
-    "COCOVQAInstructBuilder",
-    "VGVQAInstructBuilder",
-    "GQAInstructBuilder",
-    "IconQAInstructBuilder",
-    "SNLIVisualEntailmentInstructBuilder",
-    "Laion400MInstructBuilder",
-    "LLaVA150kDialInstructBuilder",
-    "ScienceQAInstructBuilder",
-    "OCRVQAInstructBuilder",
-    "TextCapsCapInstructBuilder",
-    "Flickr30kCapInstructBuilder",
     "ConceptualCaption12MInstructBuilder",
     "ConceptualCaption3MInstructBuilder",
     "VGCaptionInstructBuilder",
     "SBUCaptionInstructBuilder",
-    "ClothoQABuilder",
-
-    # DisCRN
-    "DiscrnImagePcBuilder",
-    "DiscrnAudioVideoBuilder"
-
 ]
 
 
